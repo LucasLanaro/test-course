@@ -51,3 +51,31 @@ Caso não esteja na pasta do projeto, digitar `git init nome-do-projeto`
 Uma pasta ".git" sera criada de forma oculta aonde foi setado o init
 
 No terminal, dentro da pasta do projeto o comando `ls -a` será possivel visualizar os conteudos ocutos atraves do bash
+
+---
+
+`git status`
+
+- Mostra o status do projeto do git
+
+![image-2.png](attachment:image-2.png)
+
+- Neste caso, não houve nenhum commit anterior
+
+- Nenhum arquivo foi adicionado a lista dos a serem comitados
+
+- Por padrão sempre virá na `branch master`
+
+---
+
+`git add README.md`
+
+Adiciona os arquivos para o stage
+
+Se for `git add .` todoas os arquivos serão adicionados ao stage
+
+Os arquivos que estão no stage serão comitados com o comando
+
+    git commit -m "sua mensagem"
+
+O `-m` é para adicionar uma pequena mensage que descre este commit
