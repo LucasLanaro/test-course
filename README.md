@@ -66,7 +66,7 @@ No terminal, dentro da pasta do projeto o comando `ls -a` será possivel visuali
 
 - Por padrão sempre virá na `branch master`
 
----
+### PRIMEIRO COMMIT
 
 `git add README.md`
 
@@ -79,3 +79,13 @@ Os arquivos que estão no stage serão comitados com o comando
     git commit -m "sua mensagem"
 
 O `-m` é para adicionar uma pequena mensage que descre este commit
+
+### COMITANDO ARQUIVOS MODIFICADOS (APÓS UM COMMIT)
+
+Ao inves de fazer todos o processo novamente de `git add README.md` e depois `git commit -m "sua mensagem"`, digitar o comando:
+
+    git commit -a
+
+OU
+
+`git commit -am "sua mensagem"` para adicionar uma mensagem junto
