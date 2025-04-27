@@ -89,3 +89,23 @@ Ao inves de fazer todos o processo novamente de `git add README.md` e depois `gi
 OU
 
 `git commit -am "sua mensagem"` para adicionar uma mensagem junto
+
+### REMOVENDO ARQUIVOS DO STAGE
+
+`git reset README.md` remove o arquivo README.md do stage do git
+
+`git checkout -- README.md` volta o arquivo para a versão do commit anterior
+
+---
+
+`git log` mostra a lista de commits feitos neste repositorio
+
+### REMOVENDO ARQUIVOS COMMITADOS
+
+`git rm note.ipynb`
+
+OU
+
+`rm note.ipynb` remove pelo proprio OS o arquivo (não pelo commit). Arquivo é apagado do diretório do SO. Como conseuquencia, o git entende que o arquivo foi deletado, logo é uma "Modificação"
+
+Para adicionar essa alteração de arquivo deletado, é necessario o comando `git add -u`, e após isso `git commit -m "arquivo deletado"`
