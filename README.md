@@ -52,7 +52,7 @@ Uma pasta ".git" sera criada de forma oculta aonde foi setado o init
 
 No terminal, dentro da pasta do projeto o comando `ls -a` será possivel visualizar os conteudos ocutos atraves do bash
 
----
+### STATUS
 
 `git status`
 
@@ -92,13 +92,15 @@ OU
 
 ### REMOVENDO ARQUIVOS DO STAGE
 
-`git reset README.md` remove o arquivo README.md do stage do git
+`git restore --staged README.md` remove o arquivo README.md do stage do git
 
 `git checkout -- README.md` volta o arquivo para a versão do commit anterior
 
----
+### LOGS DOS COMMITS
 
 `git log` mostra a lista de commits feitos neste repositorio
+
+`git log --oneline --graph --decorate --color` mostra a lista de commits (mais resumida e comprimida)
 
 ### REMOVENDO ARQUIVOS COMMITADOS
 
@@ -109,3 +111,47 @@ OU
 `rm note.ipynb` remove pelo proprio OS o arquivo (não pelo commit). Arquivo é apagado do diretório do SO. Como conseuquencia, o git entende que o arquivo foi deletado, logo é uma "Modificação"
 
 Para adicionar essa alteração de arquivo deletado, é necessario o comando `git add -u`, e após isso `git commit -m "arquivo deletado"`
+
+### MOVENDO ARQUIVOS
+
+`git mv main.py project`
+
+Arquivo é movido para a pasta que é especificada (no git e no SO)
+
+### IGNORANDO ARQUIVOS
+
+`.gitignore` é o arquivo que vai conter os arquivos ou extensões que sempre devem ser ignorados pelo git
+
+**EXEMPLO:**
+
+`*.log`
+
+- Todos os arquivos com extensão ".log" serão sempre ignorados
+
+### SETANDO ATENTICAÇÃO SSH
+
+Se na sua pasta root (raiz) não tiver a pasta ".ssh", criar usando `mkdir .ssh`
+
+Dentro detsa nova pasta, executar o seguinte comando:
+
+`ssh-keygen -t rsa -C "your.email@hotmail.com"`
+
+Uma mensagem ira aparecer perguntando onde deseja salvar este arquivo. Como estamos ja na pasta correta, apertar "ENTER". Após isso, sera erguntado a senha e a confirmação
+
+Abrir o arquivo do "id_rsa.pub", no Linux `nano id_rsa.pub` ou `cat id_rsa.pub` para poder ja printar e copiar a chave.
+
+No **GitHub** ir em configurações do perfil e depois em SSH Keys
+
+- Configurar o titulo como o nome do dispositivo que esta com essa key
+
+Depois de configurada a chave, ir no temrinal e digitar:
+
+`ssh -T git@github.com`
+
+# SUBINDO PARA O GITHUB
+
+Criar o repertório para plataforma
+
+Copiar o URL do repertorio como SSH
+
+`git push -u`
